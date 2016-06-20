@@ -1,0 +1,67 @@
+.features {
+  display: block;
+  position: relative;
+  .container {
+    position: relative;
+    margin-top: 100px;
+    overflow: hidden;
+  }
+  .feat-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    justify-content: center;
+    width: 100%;
+    @media all and (min-width: 70em) {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .feat-content {
+      display: block;
+      flex: 1 1 auto;
+      max-width: 60%;
+      margin-bottom: 4em;
+
+      &:hover img {
+        transition: all;
+        animation: roll linear 1s;
+        animation-iteration-count: infinite;
+        cursor: pointer;
+      }
+      h2 {
+        text-align: center;
+        transition: transform 0.5s ease-in-out;
+        transform: translate(-500px, 400px);
+        visibility: hidden;
+        font-size: 4.2vw;
+        font-weight: bold;
+        @media all and (min-width: 70em) {
+          font-size: 2em;
+        }
+      }
+      &:hover h2 {
+        transform: translate(0, 0);
+        visibility: visible;
+      }
+      @media all and (min-width: 70em){
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
